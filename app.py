@@ -1,14 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import json
+import os
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Required for session management
 
 # Load users from JSON
 def load_users():
-    with open("users.json", "r") as file:
+    filepath = os.path.join(os.path.dirname(__file__), "user.json")
+    with open(filepath, "r") as file:
         return json.load(file)
-
 # Load timetable data from JSON
 def load_timetable():
     with open("timetable.json", "r") as file:
