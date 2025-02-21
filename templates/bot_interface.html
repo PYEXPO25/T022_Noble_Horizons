@@ -19,12 +19,6 @@
             <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
             <button onclick="sendMessage()">Send</button>
         </div>
-        
-        <!-- Timetable container -->
-        <div class="timetable-container" id="timetable-container">
-            <h2>Timetable</h2>
-            <div id="timetable-content"></div>
-        </div>
     </div>
     <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
 </body>
