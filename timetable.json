@@ -1,0 +1,10 @@
+{
+    "Monday": [
+        {"start_time": "9:00 AM", "end_time": "10:00 AM", "subject": "Math", "teacher": "Mr. Smith", "period": "1st"},
+        {"start_time": "10:00 AM", "end_time": "11:00 AM", "subject": "Physics", "teacher": "Ms. Johnson", "period": "2nd"}
+    ],
+    "Tuesday": [
+        {"start_time": "9:00 AM", "end_time": "10:00 AM", "subject": "Chemistry", "teacher": "Mr. Brown", "period": "1st"},
+        {"start_time": "10:00 AM", "end_time": "11:00 AM", "subject": "Biology", "teacher": "Ms. White", "period": "2nd"}
+    ]
+}
