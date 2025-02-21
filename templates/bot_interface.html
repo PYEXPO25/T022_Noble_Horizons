@@ -16,9 +16,11 @@
             <div id="chatbox">
                 <p class="bot-message">Hello! Type "TIMETABLE" to see your schedule.</p>
             </div>
-            <input type="text" id="userInput" placeholder="Type a message...">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key === 'Enter'){sendMessage()}">
             <button onclick="sendMessage()">Send</button>
         </div>
+        
+        <!-- Timetable container -->
         <div class="timetable-container" id="timetable-container">
             <h2>Timetable</h2>
             <div id="timetable-content"></div>
