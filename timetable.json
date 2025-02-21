@@ -1,0 +1,32 @@
+{
+    "Monday": [
+        {"subject": "Maths", "teacher": "Mr. Smith", "period": "1st"},
+        {"subject": "Physics", "teacher": "Mr. Johnson", "period": "2nd"},
+        {"subject":"chemistry","teacher":"Mr. Brown","period":"3rd"},
+        {"subject":"Biology","teacher":"Mrs. Ramya","period":"4th"}
+    ],
+    "Tuesday": [
+        {"subject": "Chemistry", "teacher": "Mr. Brown", "period": "1st"},
+        {"subject": "Biology", "teacher": "Mrs. Ramya", "period": "2nd"},
+        {"subject":"Maths","teacher":"Mr. Smith","period":"3rd"},
+        {"subject":"Physics","teacher":"Mr. Johnson","period":"4th"}
+    ],
+    "Wednesday":[
+        {"subject":"Physics","teacher":"Mr. Johnson","period":"1st"},
+        {"subject":"maths","teacher":"Mr. Smith","period":"2nd"},
+        {"subject":"Biology","teacher":"Mrs. Ramya","period":"3rd"},
+        {"subject":"chemistry","teacher":"Mr. Brown","period":"4th"}
+    ],
+    "Thrusday":[
+        {"subject":"Chemistry","teacher":"Mr. Brown","period":"1st"},
+        {"subject":"Physics","teacher":"Mr. Johnson","period":"2nd"},
+        {"subject":"Maths","teacher":"Mr. Smith","period":"3rd"},
+        {"subject":"Biology","teacher":"Mrs. Ramya","period":"4th"}
+    ],
+    "Friday":[
+        {"subject":"Maths","teacher":"Mr. Smith","period":"1st"},
+        {"subject":"Physics","teacher":"Mr.Johnson","period":"2nd"},
+        {"subject":"Biology","teacher":"Mrs. Ramya","period":"3rd"},
+        {"subject":"chemistry","teacher":"Mr. Brown","period":"4th"}
+    ]
+}
