@@ -1,27 +1,26 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from auth import check_password, load_users  # Import functions from auth.py
+from auth import check_password, load_users
 import json
 import os
-from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
+app.secret_key = "my_super_secret_key_12345"  # Required for session management
 
-# Initialize Bcrypt
-bcrypt = Bcrypt()
-
-# Read the secret key from the generated file (secret_key.txt)
-with open("secret_key.txt", "rb") as file:
-    app.secret_key = file.read()
-
-# Load users from JSON file
+# Function to load users from the existing JSON file
 def load_users():
     filepath = os.path.join(os.path.dirname(__file__), "user.json")
     with open(filepath, "r") as file:
         return json.load(file)
 
-# Function to check password using Bcrypt
-def check_password(stored_password_hash, password_to_check):
-    return bcrypt.check_password_hash(stored_password_hash, password_to_check)
+# Function to load student data from the new JSON file
+def load_student_data():
+    with open("student_data.json", "r") as file:
+        return json.load(file)
+
+# Function to load canteen data from the new JSON file
+def load_canteen_data():
+    with open("canteen_data.json", "r") as file:
+        return json.load(file)
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -36,7 +35,7 @@ def login():
                 session["username"] = username  # Store session
                 return redirect(url_for("chatbot_interface"))
 
-        # If username or password is incorrect, display a message
+        # If username or password is incorrect, you can display a message or reload the page
         return "Invalid credentials, please try again"
 
     return render_template("login.html")
@@ -56,6 +55,16 @@ def logout():
 def api_timetable():
     with open("timetable.json", "r") as file:
         return jsonify(json.load(file))
+
+# API route to return student data
+@app.route("/api/student_data")
+def api_student_data():
+    return jsonify(load_student_data())
+
+# API route to return canteen data
+@app.route("/api/canteen_data")
+def api_canteen_data():
+    return jsonify(load_canteen_data())
 
 if __name__ == "__main__":
     app.run(debug=True)

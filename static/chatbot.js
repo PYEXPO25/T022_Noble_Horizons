@@ -1,36 +1,50 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("userInput").addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent default form submission
-            sendMessage();
-        }
-    });
-});
-
 function sendMessage() {
-    let userInput = document.getElementById("userInput").value.trim();
-    let chatbox = document.getElementById("chatbox");
+    const userInput = document.getElementById("userInput").value;
+    document.getElementById("userInput").value = "";  // Clear the input field after sending the message
 
-    if (userInput === "") return;
+    // Display user input in the chatbox
+    document.getElementById("chatbox").innerHTML += `<p class="user-message">${userInput}</p>`;
 
-    let userMessage = `<p class="user-message">${userInput}</p>`;
-    chatbox.innerHTML += userMessage;
-
-    if (userInput.toUpperCase() === "TIMETABLE") {
-        fetch("/api/timetable")
+    // Handling different commands
+    if (userInput.toLowerCase() === "timetable") {
+        fetch('/api/timetable')
             .then(response => response.json())
             .then(data => {
-                let timetableMessage = `<p class="bot-message"><pre>${JSON.stringify(data, null, 2)}</pre></p>`;
-                chatbox.innerHTML += timetableMessage;
-                chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll
-            })
-            .catch(error => {
-                chatbox.innerHTML += `<p class="bot-message">Error fetching timetable.</p>`;
+                let timetableInfo = '';
+                data.forEach(entry => {
+                    timetableInfo += `<p><strong>${entry.day}</strong> from ${entry.start_time} to ${entry.end_time}: ${entry.subject} (Teacher: ${entry.teacher})</p><hr>`;
+                });
+                document.getElementById("chatbox").innerHTML += `<p class="bot-message">Here is your timetable: ${timetableInfo}</p>`;
             });
-    } else {
-        chatbox.innerHTML += `<p class="bot-message">I don't understand.</p>`;
+    }
+    else if (userInput.toLowerCase() === "student data") {
+        fetch('/api/student_data')
+            .then(response => response.json())
+            .then(data => {
+                let studentInfo = '';
+                data.forEach(student => {
+                    studentInfo += `<p>Name: ${student.name}</p><p>Roll No: ${student.roll_no}</p><hr>`;
+                });
+                document.getElementById("chatbox").innerHTML += `<p class="bot-message">Here is the student data: ${studentInfo}</p>`;
+            });
+    }
+    else if (userInput.toLowerCase() === "canteen data") {
+        fetch('/api/canteen_data')
+            .then(response => response.json())
+            .then(data => {
+                let canteenInfo = '';
+                data.forEach(item => {
+                    canteenInfo += `<p>Item: ${item.food_item}</p><p>Price: ${item.price}</p><hr>`;
+                });
+                document.getElementById("chatbox").innerHTML += `<p class="bot-message">Here is the canteen menu: ${canteenInfo}</p>`;
+            });
+    }
+    else {
+        // Default response for unrecognized input
+        document.getElementById("chatbox").innerHTML += `<p class="bot-message">Sorry, I didn't understand that. Try asking for 'TIMETABLE', 'STUDENT DATA', or 'CANTEEN DATA'.</p>`;
     }
 
-    document.getElementById("userInput").value = ""; // Clear input
-    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll
+    // Scroll to the latest message
+    const chatbox = document.getElementById("chatbox");
+    chatbox.scrollTop = chatbox.scrollHeight;
 }

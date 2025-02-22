@@ -1,0 +1,11 @@
+{
+    "canteen": [
+        {"item":"Dosa(plain)","cost":"15"},
+        {"item":"Pongal","cost":"30"},
+        {"item":"Biriyani","cost":"120"},
+        {"item":"Porota","cost":"15"},
+        {"item":"Idli(2 pieces)","cost":"15"},
+        {"item":"Coffee","cost":"20"},
+        {"item":"puri(2 peices)","cost":"30"}
+    ]
+}
