@@ -1,0 +1,48 @@
+/* Dark Theme with Neon Colors */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.container {
+    padding: 50px;
+}
+
+h2.neon-text {
+    font-size: 2em;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+.neon-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ff00ff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    transition: 0.3s;
+}
+
+.neon-button:hover {
+    background-color: #00ffff;
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.neon-link {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.neon-link:hover {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
