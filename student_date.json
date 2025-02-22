@@ -1,9 +1,0 @@
-{
-    "Student": [
-        {"name":"Pranesh","roll_no":"24UIT115","phone_no":8667068496,"course":"BTECH_IT","age"="18","gender":"male"},
-        {"name":"Ashiga","roll_no":"23UAD44","phone_no":1234567898,"course":"BE_A&D","age"="17","gender":"female"},
-        {"name":"Hariharan","roll_no":"24UIT119","phone_no":8667068489,"course":"BTECH_IT","age"="18","gender":"male"},
-        {"name":"Swathi","roll_no":"23UCS122","phone_no":9876543212,"course":"BE_CSE","age"="18","gender":"female"},
-        {"name":"Hanish","roll_no":"24UIT118","phone_no":8667068896,"course":"BE_ECE","age"="18","gender":"male"},
-        ]
-}
