@@ -37,12 +37,3 @@ nav {
     background-color: #00ffff;
     box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
-
-.neon-link {
-    color: #00ffff;
-    text-decoration: none;
-}
-
-.neon-link:hover {
-    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
-}
