@@ -22,6 +22,8 @@ Team ID – T022
 - Hariharan M
 - Swathi V
 
+<img src="media/team-photo.png" alt="img not found">
+
 ## Technical Stack
 ---
 - Frontend: HTML, CSS
